@@ -1,9 +1,12 @@
 /* eslint-disable react/prop-types */
 import styles from "./Button.module.css";
 
-const Button = ({ isoutline, icon, text }) => {
+const Button = ({ isoutline, icon, text, ...rest }) => {
   return (
-    <button className={isoutline ? styles.outline_btn : styles.primary_btn}>
+    <button
+      {...rest}
+      className={isoutline ? styles.outline_btn : styles.primary_btn}
+    >
       {icon}
       {text}
     </button>
